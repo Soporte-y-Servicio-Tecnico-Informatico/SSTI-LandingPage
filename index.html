@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SSTI - Soporte y Servicio Técnico Informático</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+</head>
+<body class="light-mode">
+    <!-- Header -->
+    <header class="header">
+        <nav class="nav-container">
+            <div class="nav-left">
+                <div class="logo-container">
+                    <img src="assets/images/ssti-logo-light.png" alt="SSTI Logo" class="logo logo-light">
+                    <img src="assets/images/ssti-logo-dark.png" alt="SSTI Logo" class="logo logo-dark">
+                    <div class="company-name">
+                        <h1>Soporte y Servicio</h1>
+                        <h2>Técnico Informático</h2>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="nav-center">
+                <ul class="nav-menu">
+                    <li><a href="#inicio" class="nav-link" data-es="Inicio" data-en="Home">Inicio</a></li>
+                    <li><a href="#nosotros" class="nav-link" data-es="Nosotros" data-en="About">Nosotros</a></li>
+                    <li><a href="#servicios" class="nav-link" data-es="Servicios" data-en="Services">Servicios</a></li>
+                    <li><a href="#blog" class="nav-link" data-es="Blog" data-en="Blog">Blog</a></li>
+                    <li><a href="#tienda" class="nav-link" data-es="Tienda" data-en="Store">Tienda</a></li>
+                    <li><a href="#contacto" class="nav-link" data-es="Contacto" data-en="Contact">Contacto</a></li>
+                </ul>
+            </div>
+            
+            <div class="nav-right">
+                <div class="controls">
+                    <button class="language-toggle" id="languageToggle">
+                        <span class="lang-text" data-es="ES" data-en="EN">ES</span>
+                        <i class="fas fa-globe"></i>
+                    </button>
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon theme-icon-dark"></i>
+                        <i class="fas fa-sun theme-icon-light"></i>
+                    </button>
+                </div>
+                
+                <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Scripts -->
+    <script src="js/toggleDarkMode.js"></script>
+    <script src="js/translate.js"></script>
+    <script src="js/scripts.js"></script>
+</body>
+</html>
