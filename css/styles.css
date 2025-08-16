@@ -294,9 +294,9 @@ main {
         padding: 1rem;
     }
     
-    .nav-center {
+    /*.nav-center {
         display: none;
-    }
+    }*/
     
     .mobile-menu-toggle {
         display: flex;
