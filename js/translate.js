@@ -9,6 +9,9 @@ class LanguageTranslator {
     }
 
     init() {
+        // Encontrar todos los elementos traducibles primero
+        this.findTranslatableElements();
+
         // Aplicar idioma guardado al cargar la página
         this.applyLanguage(this.currentLanguage);
         
@@ -16,15 +19,13 @@ class LanguageTranslator {
         this.languageToggle.addEventListener('click', () => {
             this.toggleLanguage();
         });
-
-        // Encontrar todos los elementos traducibles
-        this.findTranslatableElements();
     }
 
     findTranslatableElements() {
         // Buscar elementos con atributos data-es y data-en
         const elementsWithData = document.querySelectorAll('[data-es][data-en]');
         
+        this.translatableElements = [];
         elementsWithData.forEach(element => {
             this.translatableElements.push({
                 element: element,
