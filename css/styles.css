@@ -575,9 +575,10 @@ main {
     font-weight: 500;
 }
 
+/* Indicador de scroll: mejorar visibilidad */
 .hero-scroll-indicator {
     position: absolute;
-    bottom: 30px;
+    bottom: max(30px, env(safe-area-inset-bottom));
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -587,6 +588,8 @@ main {
     color: rgba(255, 255, 255, 0.7);
     font-size: 0.9rem;
     animation: bounce 2s infinite;
+    z-index: 3;
+    pointer-events: none;
 }
 
 .scroll-arrow {
@@ -641,7 +644,7 @@ main {
 
 @media (max-width: 768px) {
     .hero {
-        padding: 100px 20px 40px;
+        padding: 100px 20px 72px;
         min-height: 90vh;
     }
     
@@ -675,9 +678,19 @@ main {
     .stat-item {
         padding: 1rem;
     }
+    .hero-scroll-indicator {
+        bottom: max(24px, calc(env(safe-area-inset-bottom) + 12px));
+        font-size: 0.95rem;
+    }
 }
 
 @media (max-width: 480px) {
+    .hero {
+        padding-bottom: 84px;
+    }
+    .hero-scroll-indicator {
+        bottom: max(20px, calc(env(safe-area-inset-bottom) + 10px));
+    }
     .hero-title-main {
         font-size: 2rem;
     }
