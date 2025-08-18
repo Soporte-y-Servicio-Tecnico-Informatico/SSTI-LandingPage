@@ -32,6 +32,13 @@
     --text-secondary: #F2F1EC;
     --border-color: #334155;
     --shadow-color: rgba(0, 0, 0, 0.3);
+    
+    /* Nuevas variables para modo oscuro */
+    --card-bg: #3a3a3a;
+    --card-border: #4a4a4a;
+    --card-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    --card-hover-shadow: 0 16px 48px rgba(0, 0, 0, 0.5);
+    --card-hover-bg: #424242;
 }
 
 /* Estilos base */
@@ -793,12 +800,26 @@ main {
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     text-align: center;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    border: 1px solid transparent;
 }
 
 .feature-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+/* Mejoras para modo oscuro */
+[data-theme="dark"] .feature-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--card-shadow);
+}
+
+[data-theme="dark"] .feature-card:hover {
+    background: var(--card-hover-bg);
+    box-shadow: var(--card-hover-shadow);
+    border-color: var(--primary-color);
 }
 
 .feature-icon {
@@ -849,11 +870,25 @@ main {
     padding: 20px;
     background: var(--bg-primary);
     border-radius: 10px;
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    border: 1px solid transparent;
 }
 
 .value-item:hover {
     transform: translateY(-3px);
+}
+
+/* Mejoras para modo oscuro */
+[data-theme="dark"] .value-item {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--card-shadow);
+}
+
+[data-theme="dark"] .value-item:hover {
+    background: var(--card-hover-bg);
+    border-color: var(--primary-color);
+    box-shadow: var(--card-hover-shadow);
 }
 
 .value-item i {
@@ -881,11 +916,25 @@ main {
     background: var(--bg-primary);
     border-radius: 15px;
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease;
+    transition: transform 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+    border: 1px solid transparent;
 }
 
 .stat-card:hover {
     transform: translateY(-5px);
+}
+
+/* Mejoras para modo oscuro */
+[data-theme="dark"] .stat-card {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    box-shadow: var(--card-shadow);
+}
+
+[data-theme="dark"] .stat-card:hover {
+    background: var(--card-hover-bg);
+    border-color: var(--primary-color);
+    box-shadow: var(--card-hover-shadow);
 }
 
 .stat-number {
@@ -899,6 +948,44 @@ main {
     font-size: 1rem;
     color: var(--text-secondary);
     font-weight: 500;
+}
+
+/* Mejoras adicionales para modo oscuro */
+[data-theme="dark"] .feature-card h5,
+[data-theme="dark"] .value-item span,
+[data-theme="dark"] .stat-label {
+    color: #e5e7eb;
+}
+
+[data-theme="dark"] .feature-card p {
+    color: #d1d5db;
+}
+
+/* Efecto de brillo sutil en modo oscuro */
+[data-theme="dark"] .feature-card,
+[data-theme="dark"] .value-item,
+[data-theme="dark"] .stat-card {
+    position: relative;
+    overflow: hidden;
+}
+
+[data-theme="dark"] .feature-card::before,
+[data-theme="dark"] .value-item::before,
+[data-theme="dark"] .stat-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(65, 193, 186, 0.1), transparent);
+    transition: left 0.5s ease;
+}
+
+[data-theme="dark"] .feature-card:hover::before,
+[data-theme="dark"] .value-item:hover::before,
+[data-theme="dark"] .stat-card:hover::before {
+    left: 100%;
 }
 
 /* Responsive Design */
