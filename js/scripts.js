@@ -78,6 +78,77 @@ class SSTIHeader {
             
             lastScrollTop = scrollTop;
         });
+
+        // Scroll suave para enlaces internos
+        this.initSmoothScroll();
+        
+        // Efectos de animación para la hero section
+        this.initHeroAnimations();
+    }
+
+    // Scroll suave para enlaces internos
+    initSmoothScroll() {
+        const internalLinks = document.querySelectorAll('a[href^="#"]');
+        
+        internalLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                
+                const targetId = link.getAttribute('href');
+                const targetElement = document.querySelector(targetId);
+                
+                if (targetElement) {
+                    const headerHeight = document.querySelector('.header').offsetHeight;
+                    const targetPosition = targetElement.offsetTop - headerHeight;
+                    
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+    }
+
+    // Animaciones para la hero section
+    initHeroAnimations() {
+        const heroElements = document.querySelectorAll('.hero-title, .hero-description, .hero-features, .hero-actions, .hero-visual');
+        
+        // Función para verificar si un elemento está en el viewport
+        const isInViewport = (element) => {
+            const rect = element.getBoundingClientRect();
+            return (
+                rect.top >= 0 &&
+                rect.left >= 0 &&
+                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
+                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
+            );
+        };
+
+        // Función para animar elementos cuando entran en el viewport
+        const animateOnScroll = () => {
+            heroElements.forEach((element, index) => {
+                if (isInViewport(element)) {
+                    setTimeout(() => {
+                        element.style.opacity = '1';
+                        element.style.transform = 'translateY(0)';
+                    }, index * 200);
+                }
+            });
+        };
+
+        // Aplicar estilos iniciales para la animación
+        heroElements.forEach(element => {
+            element.style.opacity = '0';
+            element.style.transform = 'translateY(30px)';
+            element.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+        });
+
+        // Ejecutar animación al cargar la página
+        setTimeout(animateOnScroll, 100);
+        
+        // Ejecutar animación al hacer scroll
+        window.addEventListener('scroll', animateOnScroll);
     }
 }
 
