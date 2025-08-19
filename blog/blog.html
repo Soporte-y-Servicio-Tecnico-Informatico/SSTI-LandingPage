@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - SSTI</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .blog-page-header { padding-top: 120px; padding-bottom: 20px; text-align: center; }
+        .back-home { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: var(--primary-color); font-weight: 600; }
+        .blog-list { padding: 20px 0 80px; }
+        .blog-list .blog-card .blog-image { height: 220px; }
+    </style>
+    <script defer src="../js/toggleDarkMode.js"></script>
+    <script defer src="../js/translate.js"></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="nav-left">
+                <div class="logo-container">
+                    <a href="../index.html" class="back-home" aria-label="Inicio">
+                        <i class="fas fa-arrow-left"></i>
+                        <span data-es="Inicio" data-en="Home">Inicio</span>
+                    </a>
+                </div>
+            </div>
+            <!--<div class="nav-center">
+                <ul class="nav-menu">
+                    <li><a href="../index.html#inicio" class="nav-link" data-es="Inicio" data-en="Home">Inicio</a></li>
+                    <li><a href="../index.html#nosotros" class="nav-link" data-es="Nosotros" data-en="About">Nosotros</a></li>
+                    <li><a href="../index.html#servicios" class="nav-link" data-es="Servicios" data-en="Services">Servicios</a></li>
+                    <li><a href="#" class="nav-link" data-es="Blog" data-en="Blog">Blog</a></li>
+                    <li><a href="../index.html#contacto" class="nav-link" data-es="Contacto" data-en="Contact">Contacto</a></li>
+                </ul>
+            </div>-->
+            <div class="nav-right">
+                <div class="controls">
+                    <button class="language-toggle" id="languageToggle">
+                        <span class="lang-text" data-es="ES" data-en="EN">ES</span>
+                        <i class="fas fa-globe"></i>
+                    </button>
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon theme-icon-dark"></i>
+                        <i class="fas fa-sun theme-icon-light"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="blog">
+        <div class="container blog-page-header">
+            <h1 class="section-title" data-es="Blog de Tecnología" data-en="Tech Blog">Blog de Tecnología</h1>
+            <p class="section-subtitle" data-es="Noticias, consejos y tendencias para estar al día." data-en="News, tips, and trends to stay up to date.">Noticias, consejos y tendencias para estar al día.</p>
+        </div>
+
+        <div class="container blog-list">
+            <div class="blog-grid">
+
+                <!-- <article class="blog-card">
+                    <a href="./ia-generativa.html" class="blog-image-link" aria-label="Leer artículo IA generativa">
+                        <img class="blog-image" src="https://picsum.photos/seed/ai/800/500" alt="IA generativa">
+                    </a>
+                    <div class="blog-content">
+                        <h3 data-es="IA generativa transforma el soporte técnico" data-en="Generative AI transforms IT support">IA generativa transforma el soporte técnico</h3>
+                        <p data-es="Nuevas herramientas impulsan la automatización y mejoran la atención al cliente en tiempo récord." data-en="New tools boost automation and improve customer support in record time.">Nuevas herramientas impulsan la automatización y mejoran la atención al cliente en tiempo récord.</p>
+                        <a class="read-more" href="./ia-generativa.html" data-es="Leer artículo" data-en="Read article">Leer artículo</a>
+                    </div>
+                </article> -->
+
+                <!-- Phishing -->
+                <article class="blog-card">
+                    <a href="./phishing.html" class="blog-image-link" aria-label="Leer artículo Phishing">
+                        <img class="blog-image" src="https://media.istockphoto.com/id/2151633407/es/foto/threat-phishing-malicious-danger-hack-warning-mail-thief-scam-alert-safety-letter-technology.webp?a=1&b=1&s=612x612&w=0&k=20&c=a--RwQg6ve4cm9lJ4sWN4oNu0XVP87pH367rb3l8ywA=" alt="Phishing">
+                    </a>
+                    <div class="blog-content">
+                        <h3 data-es="Cuidado con el phishing: protege tu información" data-en="Beware of phishing: protect your information">Cuidado con el phishing: protege tu información</h3>
+                        <p data-es="Descubre cómo identificar correos sospechosos y proteger tus datos de estafas digitales." data-en="Learn how to identify suspicious emails and protect your data from digital scams.">Descubre cómo identificar correos sospechosos y proteger tus datos de estafas digitales.</p>
+                        <a class="read-more" href="./phishing.html" data-es="Leer artículo" data-en="Read article">Leer artículo</a>
+                    </div>
+                </article>
+
+                <!-- Mantenimiento preventivo -->
+                <article class="blog-card">
+                    <a href="./mantenimiento.html" class="blog-image-link" aria-label="Leer artículo Mantenimiento preventivo">
+                        <img class="blog-image" src="https://images.unsplash.com/photo-1699905527162-8b932a8e9206?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Mantenimiento preventivo">
+                    </a>
+                    <div class="blog-content">
+                        <h3 data-es="Mantenimiento preventivo: alarga la vida de tus equipos" data-en="Preventive maintenance: extend the life of your devices">Mantenimiento preventivo: alarga la vida de tus equipos</h3>
+                        <p data-es="Aprende buenas prácticas para mantener tus computadoras rápidas, seguras y eficientes." data-en="Learn best practices to keep your computers fast, secure, and efficient.">Aprende buenas prácticas para mantener tus computadoras rápidas, seguras y eficientes.</p>
+                        <a class="read-more" href="./mantenimiento.html" data-es="Leer artículo" data-en="Read article">Leer artículo</a>
+                    </div>
+                </article>
+
+                <!-- Copias de seguridad -->
+                <article class="blog-card">
+                    <a href="./copias-seguridad.html" class="blog-image-link" aria-label="Leer artículo Copias de seguridad">
+                        <img class="blog-image" src="https://plus.unsplash.com/premium_photo-1683288706548-e8b6bb72fe86?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fHw%3D" alt="Copias de seguridad">
+                    </a>
+                    <div class="blog-content">
+                        <h3 data-es="Protege tus datos con copias de seguridad" data-en="Protect your data with backups">Protege tus datos con copias de seguridad</h3>
+                        <p data-es="Evita pérdidas de información importante siguiendo buenas prácticas de backup." data-en="Avoid losing important information by following proper backup practices.">Evita pérdidas de información importante siguiendo buenas prácticas de backup.</p>
+                        <a class="read-more" href="./copias-seguridad.html" data-es="Leer artículo" data-en="Read article">Leer artículo</a>
+                    </div>
+                </article>
+                
+                <!-- Actualizaciones -->
+                <article class="blog-card">
+                    <a href="./actualizaciones.html" class="blog-image-link" aria-label="Leer artículo Actualizaciones">
+                        <img class="blog-image" src="https://images.unsplash.com/photo-1620843002805-05a08cb72f57?q=80&w=1074&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Actualizaciones de software">
+                    </a>
+                    <div class="blog-content">
+                        <h3 data-es="Actualizaciones: mantén tu equipo en buen estado" data-en="Updates: keep your device in good condition">Actualizaciones: mantén tu equipo en buen estado</h3>
+                        <p data-es="Descubre cómo mantener tu computadora o celular funcionando sin problemas con actualizaciones regulares." data-en="Learn how to keep your computer or phone running smoothly with regular updates.">Descubre cómo mantener tu computadora o celular funcionando sin problemas con actualizaciones regulares.</p>
+                        <a class="read-more" href="./actualizaciones.html" data-es="Leer artículo" data-en="Read article">Leer artículo</a>
+                    </div>
+                </article>
+
+                <!-- Nuevas tecnologías -->
+                <article class="blog-card">
+                    <a href="./nuevas-tecnologias.html" class="blog-image-link" aria-label="Leer artículo Nuevas tecnologías">
+                        <img class="blog-image" src="https://plus.unsplash.com/premium_photo-1752697692959-3f5d0e3c4e12?q=80&w=1332&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Nuevas tecnologías">
+                    </a>
+                    <div class="blog-content">
+                        <h3 data-es="Nuevas tecnologías en informática: cómo impactan a empresas y usuarios" data-en="New technologies in IT: how they impact businesses and users">Nuevas tecnologías en informática: cómo impactan a empresas y usuarios</h3>
+                        <p data-es="Descubre cómo las últimas innovaciones en hardware y software están transformando la forma en que trabajamos y vivimos." data-en="Discover how the latest innovations in hardware and software are transforming the way we work and live.">Descubre cómo las últimas innovaciones en hardware y software están transformando la forma en que trabajamos y vivimos.</p>
+                        <a class="read-more" href="./nuevas-tecnologias.html" data-es="Leer artículo" data-en="Read article">Leer artículo</a>
+                    </div>
+                </article>
+
+            </div>
+        </div>
+    </main>
+
+    <script defer src="../js/scripts.js"></script>
+</body>
+</html>
+
+

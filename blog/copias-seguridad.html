@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Protege tus datos: la importancia de las copias de seguridad - Blog SSTI</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .article { padding: 120px 0 80px; }
+        .article-header { text-align: center; margin-bottom: 24px; }
+        .article-hero { max-width: 1000px; margin: 0 auto 24px; border-radius: 16px; overflow: hidden; }
+        .article-hero img { width: 100%; height: auto; display: block; }
+        .article-content { max-width: 800px; margin: 0 auto; line-height: 1.8; }
+        .article-content h2 { font-size: 1.4rem; margin: 24px 0 12px; color: var(--text-primary); }
+        .article-content ul { padding-left: 18px; }
+        .article-content li { margin: 6px 0; }
+        .breadcrumbs { text-align: center; margin-bottom: 16px; }
+        .breadcrumbs a { color: var(--primary-color); text-decoration: none; }
+        .back-home { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: var(--primary-color); font-weight: 600; }
+    </style>
+    <script defer src="../js/toggleDarkMode.js"></script>
+    <script defer src="../js/translate.js"></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="nav-left">
+                <div class="logo-container">
+                    <a href="./blog.html" class="back-home" aria-label="Volver al blog">
+                        <i class="fas fa-arrow-left"></i>
+                        <span data-es="Volver al blog" data-en="Back to blog">Volver al blog</span>
+                    </a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <div class="controls">
+                    <button class="language-toggle" id="languageToggle">
+                        <span class="lang-text" data-es="ES" data-en="EN">ES</span>
+                        <i class="fas fa-globe"></i>
+                    </button>
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon theme-icon-dark"></i>
+                        <i class="fas fa-sun theme-icon-light"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="article">
+        <div class="container">
+            <!--<div class="breadcrumbs">
+                <a href="../index.html" data-es="Inicio" data-en="Home">Inicio</a> ·
+                <a href="./blog.html" data-es="Blog" data-en="Blog">Blog</a>
+            </div>-->
+            <header class="article-header">
+                <h1 class="section-title" data-es="Protege tus datos: la importancia de las copias de seguridad" data-en="Protect your data: the importance of backups">Protege tus datos: la importancia de las copias de seguridad</h1>
+                <p class="section-subtitle" data-es="Evita pérdidas de información importante siguiendo buenas prácticas de backup" data-en="Avoid losing important information by following proper backup practices">Evita pérdidas de información importante siguiendo buenas prácticas de backup</p>
+            </header>
+            <div class="article-hero">
+                <img src="https://plus.unsplash.com/premium_photo-1683288706548-e8b6bb72fe86?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDd8fHxlbnwwfHx8fHw%3D" alt="Copias de seguridad y protección de datos">
+            </div>
+            <article class="article-content">
+                <p>En la era digital, nuestros datos personales y profesionales son uno de nuestros activos más valiosos. Desde fotos y documentos importantes hasta información financiera y laboral, perderlos puede generar consecuencias graves.</p>
+                
+                <p>El backup o copia de seguridad es la forma más efectiva de proteger esta información y minimizar riesgos ante fallos de hardware, ataques informáticos o errores humanos.</p>
+
+                <h2>¿Por qué hacer copias de seguridad?</h2>
+                <p>Perder datos puede ocurrirle a cualquiera:</p>
+                <ul>
+                    <li><strong>Fallos en el disco duro</strong> o la memoria del equipo.</li>
+                    <li><strong>Infecciones por virus o ransomware</strong> que bloquean el acceso a archivos.</li>
+                    <li><strong>Eliminación accidental</strong> de documentos importantes.</li>
+                    <li><strong>Robo o pérdida</strong> de dispositivos.</li>
+                </ul>
+                
+                <p>Una copia de seguridad asegura que, ante cualquier eventualidad, puedas recuperar tu información rápidamente sin interrupciones graves en tu trabajo o vida diaria.</p>
+
+                <h2>Tipos de copias de seguridad</h2>
+                <p>Existen varias estrategias que se pueden combinar según tus necesidades:</p>
+                <ul>
+                    <li><strong>Local:</strong> almacenamiento en discos duros externos, memorias USB o servidores internos.</li>
+                    <li><strong>En la nube:</strong> servicios como Google Drive, OneDrive o Dropbox, que permiten acceder a los datos desde cualquier lugar.</li>
+                    <li><strong>Automática y programada:</strong> configurar backups automáticos evita olvidos y asegura que la información esté siempre actualizada.</li>
+                    <li><strong>Redundancia:</strong> mantener más de una copia en distintos lugares aumenta la seguridad frente a pérdidas.</li>
+                </ul>
+
+                <h2>Buenas prácticas para proteger tus datos</h2>
+                <ul>
+                    <li><strong>Realizar copias de seguridad de forma regular,</strong> al menos una vez por semana para archivos críticos.</li>
+                    <li><strong>Usar contraseñas fuertes y autenticación en dos pasos</strong> para los servicios en la nube.</li>
+                    <li><strong>Organizar los archivos</strong> para facilitar su recuperación en caso de necesitar restaurarlos.</li>
+                    <li><strong>Probar la restauración de vez en cuando,</strong> para asegurarse de que las copias funcionan correctamente.</li>
+                </ul>
+
+                <h2>SSTI y la seguridad de tu información</h2>
+                <p>En SSTI entendemos la importancia de mantener tus datos protegidos. Por eso ofrecemos asesoría y soluciones personalizadas de backup y recuperación, tanto para empresas como para usuarios domésticos.</p>
+                
+                <p>Recuerda: <strong>prevenir la pérdida de información es más económico y seguro que recuperarla después de un desastre.</strong></p>
+            </article>
+        </div>
+    </main>
+
+    <script defer src="../js/scripts.js"></script>
+</body>
+</html>
