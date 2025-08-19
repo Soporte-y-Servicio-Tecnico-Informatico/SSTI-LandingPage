@@ -28,7 +28,25 @@ class LanguageTranslator {
                 'hero.stats.years': 'Años de Experiencia',
                 'hero.stats.support': 'Soporte Disponible',
                 'hero.scroll': 'Desliza para explorar',
-                'page.title': 'SSTI - Soporte y Servicio Técnico Informático'
+                'page.title': 'SSTI - Soporte y Servicio Técnico Informático',
+                'services.title': 'Servicios Principales',
+                'services.subtitle': 'Soluciones tecnológicas diseñadas para impulsar tu negocio con soporte experto y resultados medibles.',
+                'services.card.support.title': 'Soporte Técnico Integral',
+                'services.card.support.desc': 'Atención rápida y experta para resolver incidencias de hardware, software y redes, en sitio y de forma remota.',
+                'services.card.maintenance.title': 'Mantenimiento Preventivo y Correctivo',
+                'services.card.maintenance.desc': 'Optimización, limpieza y reparación de equipos para maximizar el rendimiento y evitar paradas no planificadas.',
+                'services.card.networking.title': 'Redes e Infraestructura',
+                'services.card.networking.desc': 'Diseño, instalación y mejora de redes cableadas e inalámbricas con alta disponibilidad y seguridad.',
+                'services.card.cyber.title': 'Ciberseguridad y Protección de Datos',
+                'services.card.cyber.desc': 'Antivirus, firewalls, hardening y políticas de respaldo para proteger su información crítica.',
+                'services.card.cloud.title': 'Cloud y Virtualización',
+                'services.card.cloud.desc': 'Migración a la nube, Microsoft 365, virtualización y modernización de infraestructura para escalar con eficiencia.',
+                'services.card.backup.title': 'Servidores, Backup y Continuidad',
+                'services.card.backup.desc': 'Implementación y monitoreo de servidores, copias de seguridad y planes de recuperación ante desastres.',
+                'services.cta.primary': 'Solicitar Cotización',
+                'services.cta.secondary': 'Agendar Diagnóstico',
+                'services.group.support.title': 'Soporte técnico (presencial y remoto)',
+                'services.group.webdev.title': 'Desarrollo web y publicidad digital'
             },
             en: {
                 'header.company.title1': 'Support & Service',
@@ -51,7 +69,25 @@ class LanguageTranslator {
                 'hero.stats.years': 'Years of Experience',
                 'hero.stats.support': 'Support Available',
                 'hero.scroll': 'Scroll to explore',
-                'page.title': 'SSTI - IT Technical Support and Service'
+                'page.title': 'SSTI - IT Technical Support and Service',
+                'services.title': 'Core Services',
+                'services.subtitle': 'Technology solutions designed to power your business with expert support and measurable results.',
+                'services.card.support.title': 'Comprehensive IT Support',
+                'services.card.support.desc': 'Fast, expert assistance to resolve hardware, software, and network issues, both on-site and remotely.',
+                'services.card.maintenance.title': 'Preventive & Corrective Maintenance',
+                'services.card.maintenance.desc': 'Optimization, cleaning, and repair of equipment to maximize performance and prevent unplanned downtime.',
+                'services.card.networking.title': 'Networking & Infrastructure',
+                'services.card.networking.desc': 'Design, installation, and improvement of wired and wireless networks with high availability and security.',
+                'services.card.cyber.title': 'Cybersecurity & Data Protection',
+                'services.card.cyber.desc': 'Antivirus, firewalls, hardening, and backup policies to protect your critical information.',
+                'services.card.cloud.title': 'Cloud & Virtualization',
+                'services.card.cloud.desc': 'Cloud migration, Microsoft 365, virtualization, and infrastructure modernization to scale efficiently.',
+                'services.card.backup.title': 'Servers, Backup & Continuity',
+                'services.card.backup.desc': 'Implementation and monitoring of servers, backups, and disaster recovery plans.',
+                'services.cta.primary': 'Request a Quote',
+                'services.cta.secondary': 'Schedule a Diagnostic',
+                'services.group.support.title': 'Technical support (on-site and remote)',
+                'services.group.webdev.title': 'Web development and digital marketing'
             }
         };
         this.init();
