@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog - SSTI</title>
+    <link rel="stylesheet" href="../css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .blog-page-header { padding-top: 120px; padding-bottom: 20px; text-align: center; }
+        .back-home { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: var(--primary-color); font-weight: 600; }
+        .blog-list { padding: 20px 0 80px; }
+        .blog-list .blog-card .blog-image { height: 220px; }
+    </style>
+    <script defer src="../js/toggleDarkMode.js"></script>
+    <script defer src="../js/translate.js"></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="nav-left">
+                <div class="logo-container">
+                    <a href="../index.html" class="back-home" aria-label="Inicio">
+                        <i class="fas fa-arrow-left"></i>
+                        <span data-es="Inicio" data-en="Home">Inicio</span>
+                    </a>
+                </div>
+            </div>
+            <div class="nav-center">
+                <ul class="nav-menu">
+                    <li><a href="../index.html#inicio" class="nav-link" data-es="Inicio" data-en="Home">Inicio</a></li>
+                    <li><a href="../index.html#nosotros" class="nav-link" data-es="Nosotros" data-en="About">Nosotros</a></li>
+                    <li><a href="../index.html#servicios" class="nav-link" data-es="Servicios" data-en="Services">Servicios</a></li>
+                    <li><a href="#" class="nav-link" data-es="Blog" data-en="Blog">Blog</a></li>
+                    <li><a href="../index.html#contacto" class="nav-link" data-es="Contacto" data-en="Contact">Contacto</a></li>
+                </ul>
+            </div>
+            <div class="nav-right">
+                <div class="controls">
+                    <button class="language-toggle" id="languageToggle">
+                        <span class="lang-text" data-es="ES" data-en="EN">ES</span>
+                        <i class="fas fa-globe"></i>
+                    </button>
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon theme-icon-dark"></i>
+                        <i class="fas fa-sun theme-icon-light"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="blog">
+        <div class="container blog-page-header">
+            <h1 class="section-title" data-es="Blog de Tecnología" data-en="Tech Blog">Blog de Tecnología</h1>
+            <p class="section-subtitle" data-es="Noticias, consejos y tendencias para estar al día." data-en="News, tips, and trends to stay up to date.">Noticias, consejos y tendencias para estar al día.</p>
+        </div>
+
+        <div class="container blog-list">
+            <div class="blog-grid">
+                <article class="blog-card">
+                    <a href="./ia-generativa.html" class="blog-image-link" aria-label="Leer artículo IA generativa">
+                        <img class="blog-image" src="https://picsum.photos/seed/ai/800/500" alt="IA generativa">
+                    </a>
+                    <div class="blog-content">
+                        <h3 data-es="IA generativa transforma el soporte técnico" data-en="Generative AI transforms IT support">IA generativa transforma el soporte técnico</h3>
+                        <p data-es="Nuevas herramientas impulsan la automatización y mejoran la atención al cliente en tiempo récord." data-en="New tools boost automation and improve customer support in record time.">Nuevas herramientas impulsan la automatización y mejoran la atención al cliente en tiempo récord.</p>
+                        <a class="read-more" href="./ia-generativa.html" data-es="Leer artículo" data-en="Read article">Leer artículo</a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <a href="./ciberseguridad-2025.html" class="blog-image-link" aria-label="Leer artículo Ciberseguridad 2025">
+                        <img class="blog-image" src="https://picsum.photos/seed/cyber/800/500" alt="Ciberseguridad 2025">
+                    </a>
+                    <div class="blog-content">
+                        <h3 data-es="Nuevas amenazas de ciberseguridad 2025" data-en="New cybersecurity threats in 2025">Nuevas amenazas de ciberseguridad 2025</h3>
+                        <p data-es="Un repaso a las vulnerabilidades emergentes y cómo proteger tu negocio." data-en="A look at emerging vulnerabilities and how to protect your business.">Un repaso a las vulnerabilidades emergentes y cómo proteger tu negocio.</p>
+                        <a class="read-more" href="./ciberseguridad-2025.html" data-es="Leer artículo" data-en="Read article">Leer artículo</a>
+                    </div>
+                </article>
+                <article class="blog-card">
+                    <a href="./nube-hibrida.html" class="blog-image-link" aria-label="Leer artículo Nube híbrida">
+                        <img class="blog-image" src="https://picsum.photos/seed/cloud/800/500" alt="Nube híbrida">
+                    </a>
+                    <div class="blog-content">
+                        <h3 data-es="La nube híbrida sigue en crecimiento" data-en="Hybrid cloud keeps growing">La nube híbrida sigue en crecimiento</h3>
+                        <p data-es="Las empresas adoptan estrategias mixtas para equilibrar costos, seguridad y escalabilidad." data-en="Companies adopt mixed strategies to balance cost, security, and scalability.">Las empresas adoptan estrategias mixtas para equilibrar costos, seguridad y escalabilidad.</p>
+                        <a class="read-more" href="./nube-hibrida.html" data-es="Leer artículo" data-en="Read article">Leer artículo</a>
+                    </div>
+                </article>
+            </div>
+        </div>
+    </main>
+
+    <script defer src="../js/scripts.js"></script>
+</body>
+</html>
+
+
