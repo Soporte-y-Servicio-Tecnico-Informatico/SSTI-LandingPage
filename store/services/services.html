@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Servicios Técnicos - SSTI</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .services-page-header { padding-top: 120px; padding-bottom: 20px; text-align: center; }
+        .back-home { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: var(--primary-color); font-weight: 600; }
+        .services-list { padding: 20px 0 80px; }
+        .service-category { margin-bottom: 60px; }
+        .service-category h2 { font-size: 2rem; margin-bottom: 30px; color: var(--text-primary); text-align: center; }
+        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .service-item { background: var(--background-color); border: 1px solid var(--border-color); border-radius: 16px; padding: 30px; box-shadow: 0 10px 30px var(--shadow-color); transition: all 0.3s ease; }
+        .service-item:hover { transform: translateY(-5px); box-shadow: 0 20px 40px var(--shadow-color); border-color: var(--primary-color); }
+        .service-item h3 { font-size: 1.4rem; margin-bottom: 15px; color: var(--text-primary); }
+        .service-item p { color: var(--text-secondary); margin-bottom: 20px; line-height: 1.6; }
+        .service-features { margin-bottom: 25px; }
+        .service-features li { margin-bottom: 8px; color: var(--text-secondary); }
+        .service-price { font-size: 1.3rem; font-weight: 700; color: var(--primary-color); margin-bottom: 20px; }
+        .service-cta { display: inline-block; background: var(--primary-color); color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; }
+        .service-cta:hover { background: #3aa8a1; transform: translateY(-2px); }
+    </style>
+    <script defer src="../../js/toggleDarkMode.js"></script>
+    <script defer src="../../js/translate.js"></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="nav-left">
+                <div class="logo-container">
+                    <a href="../../index.html" class="back-home" aria-label="Inicio">
+                        <i class="fas fa-arrow-left"></i>
+                        <span data-es="Inicio" data-en="Home">Inicio</span>
+                    </a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <div class="controls">
+                    <button class="language-toggle" id="languageToggle">
+                        <span class="lang-text" data-es="ES" data-en="EN">ES</span>
+                        <i class="fas fa-globe"></i>
+                    </button>
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon theme-icon-dark"></i>
+                        <i class="fas fa-sun theme-icon-light"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="services">
+        <div class="container services-page-header">
+            <h1 class="section-title" data-es="Servicios Técnicos" data-en="Technical Services">Servicios Técnicos</h1>
+            <p class="section-subtitle" data-es="Soluciones profesionales para todas tus necesidades tecnológicas" data-en="Professional solutions for all your technological needs">Soluciones profesionales para todas tus necesidades tecnológicas</p>
+        </div>
+
+        <div class="container services-list">
+            <!-- Soporte Técnico -->
+            <div class="service-category">
+                <h2 data-es="Soporte Técnico" data-en="Technical Support">Soporte Técnico</h2>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <h3 data-es="Mantenimiento Preventivo" data-en="Preventive Maintenance">Mantenimiento Preventivo</h3>
+                        <p data-es="Mantenimiento regular para mantener tu equipo funcionando de manera óptima" data-en="Regular maintenance to keep your equipment running optimally">Mantenimiento regular para mantener tu equipo funcionando de manera óptima</p>
+                        <ul class="service-features">
+                            <li data-es="Limpieza de componentes" data-en="Component cleaning">Limpieza de componentes</li>
+                            <li data-es="Actualización de software" data-en="Software updates">Actualización de software</li>
+                            <li data-es="Verificación de seguridad" data-en="Security verification">Verificación de seguridad</li>
+                        </ul>
+                        <div class="service-price" data-es="Desde $50" data-en="From $50">Desde $50</div>
+                        <a href="#" class="service-cta" data-es="Solicitar Servicio" data-en="Request Service">Solicitar Servicio</a>
+                    </div>
+
+                    <div class="service-item">
+                        <h3 data-es="Reparación de Hardware" data-en="Hardware Repair">Reparación de Hardware</h3>
+                        <p data-es="Reparación profesional de componentes y equipos informáticos" data-en="Professional repair of computer components and equipment">Reparación profesional de componentes y equipos informáticos</p>
+                        <ul class="service-features">
+                            <li data-es="Diagnóstico gratuito" data-en="Free diagnosis">Diagnóstico gratuito</li>
+                            <li data-es="Garantía en repuestos" data-en="Warranty on parts">Garantía en repuestos</li>
+                            <li data-es="Reparación rápida" data-en="Fast repair">Reparación rápida</li>
+                        </ul>
+                        <div class="service-price" data-es="Desde $80" data-en="From $80">Desde $80</div>
+                        <a href="#" class="service-cta" data-es="Solicitar Reparación" data-en="Request Repair">Solicitar Reparación</a>
+                    </div>
+
+                    <div class="service-item">
+                        <h3 data-es="Instalación de Software" data-en="Software Installation">Instalación de Software</h3>
+                        <p data-es="Instalación y configuración de software según tus necesidades" data-en="Software installation and configuration according to your needs">Instalación y configuración de software según tus necesidades</p>
+                        <ul class="service-features">
+                            <li data-es="Sistemas operativos" data-en="Operating systems">Sistemas operativos</li>
+                            <li data-es="Aplicaciones de oficina" data-en="Office applications">Aplicaciones de oficina</li>
+                            <li data-es="Software especializado" data-en="Specialized software">Software especializado</li>
+                        </ul>
+                        <div class="service-price" data-es="Desde $40" data-en="From $40">Desde $40</div>
+                        <a href="#" class="service-cta" data-es="Solicitar Instalación" data-en="Request Installation">Solicitar Instalación</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Reparación y Mantenimiento -->
+            <div class="service-category">
+                <h2 data-es="Reparación y Mantenimiento" data-en="Repair and Maintenance">Reparación y Mantenimiento</h2>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <h3 data-es="Eliminación de Virus" data-en="Virus Removal">Eliminación de Virus</h3>
+                        <p data-es="Limpieza completa de malware y protección antivirus" data-en="Complete malware cleanup and antivirus protection">Limpieza completa de malware y protección antivirus</p>
+                        <ul class="service-features">
+                            <li data-es="Escaneo completo del sistema" data-en="Complete system scan">Escaneo completo del sistema</li>
+                            <li data-es="Eliminación de amenazas" data-en="Threat removal">Eliminación de amenazas</li>
+                            <li data-es="Instalación de antivirus" data-en="Antivirus installation">Instalación de antivirus</li>
+                        </ul>
+                        <div class="service-price" data-es="Desde $60" data-en="From $60">Desde $60</div>
+                        <a href="#" class="service-cta" data-es="Solicitar Limpieza" data-en="Request Cleanup">Solicitar Limpieza</a>
+                    </div>
+
+                    <div class="service-item">
+                        <h3 data-es="Configuración de Redes" data-en="Network Configuration">Configuración de Redes</h3>
+                        <p data-es="Configuración y optimización de redes domésticas y empresariales" data-en="Configuration and optimization of home and business networks">Configuración y optimización de redes domésticas y empresariales</p>
+                        <ul class="service-features">
+                            <li data-es="Configuración de routers" data-en="Router configuration">Configuración de routers</li>
+                            <li data-es="Optimización de WiFi" data-en="WiFi optimization">Optimización de WiFi</li>
+                            <li data-es="Seguridad de red" data-en="Network security">Seguridad de red</li>
+                        </ul>
+                        <div class="service-price" data-es="Desde $70" data-en="From $70">Desde $70</div>
+                        <a href="#" class="service-cta" data-es="Solicitar Configuración" data-en="Request Configuration">Solicitar Configuración</a>
+                    </div>
+
+                    <div class="service-item">
+                        <h3 data-es="Respaldo de Datos" data-en="Data Backup">Respaldo de Datos</h3>
+                        <p data-es="Sistema de respaldo seguro para proteger tu información importante" data-en="Secure backup system to protect your important information">Sistema de respaldo seguro para proteger tu información importante</p>
+                        <ul class="service-features">
+                            <li data-es="Respaldo automático" data-en="Automatic backup">Respaldo automático</li>
+                            <li data-es="Almacenamiento en la nube" data-en="Cloud storage">Almacenamiento en la nube</li>
+                            <li data-es="Recuperación de datos" data-en="Data recovery">Recuperación de datos</li>
+                        </ul>
+                        <div class="service-price" data-es="Desde $90" data-en="From $90">Desde $90</div>
+                        <a href="#" class="service-cta" data-es="Solicitar Respaldo" data-en="Request Backup">Solicitar Respaldo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Capacitación y Entrenamiento -->
+            <div class="service-category">
+                <h2 data-es="Capacitación y Entrenamiento" data-en="Training and Education">Capacitación y Entrenamiento</h2>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <h3 data-es="Capacitación Básica" data-en="Basic Training">Capacitación Básica</h3>
+                        <p data-es="Aprende a usar tu computadora desde cero de manera fácil y práctica" data-en="Learn to use your computer from scratch in an easy and practical way">Aprende a usar tu computadora desde cero de manera fácil y práctica</p>
+                        <ul class="service-features">
+                            <li data-es="Uso básico de Windows" data-en="Basic Windows usage">Uso básico de Windows</li>
+                            <li data-es="Navegación en internet" data-en="Internet navigation">Navegación en internet</li>
+                            <li data-es="Correo electrónico" data-en="Email">Correo electrónico</li>
+                        </ul>
+                        <div class="service-price" data-es="Desde $120" data-en="From $120">Desde $120</div>
+                        <a href="#" class="service-cta" data-es="Solicitar Capacitación" data-en="Request Training">Solicitar Capacitación</a>
+                    </div>
+
+                    <div class="service-item">
+                        <h3 data-es="Capacitación Avanzada" data-en="Advanced Training">Capacitación Avanzada</h3>
+                        <p data-es="Mejora tus habilidades con herramientas de oficina y software especializado" data-en="Improve your skills with office tools and specialized software">Mejora tus habilidades con herramientas de oficina y software especializado</p>
+                        <ul class="service-features">
+                            <li data-es="Microsoft Office" data-en="Microsoft Office">Microsoft Office</li>
+                            <li data-es="Google Workspace" data-en="Google Workspace">Google Workspace</li>
+                            <li data-es="Software especializado" data-en="Specialized software">Software especializado</li>
+                        </ul>
+                        <div class="service-price" data-es="Desde $150" data-en="From $150">Desde $150</div>
+                        <a href="#" class="service-cta" data-es="Solicitar Capacitación" data-en="Request Training">Solicitar Capacitación</a>
+                    </div>
+
+                    <div class="service-item">
+                        <h3 data-es="Capacitación Empresarial" data-en="Business Training">Capacitación Empresarial</h3>
+                        <p data-es="Capacitación personalizada para equipos de trabajo y empresas" data-en="Personalized training for work teams and companies">Capacitación personalizada para equipos de trabajo y empresas</p>
+                        <ul class="service-features">
+                            <li data-es="Capacitación grupal" data-en="Group training">Capacitación grupal</li>
+                            <li data-es="Horarios flexibles" data-en="Flexible schedules">Horarios flexibles</li>
+                            <li data-es="Material personalizado" data-en="Customized material">Material personalizado</li>
+                        </ul>
+                        <div class="service-price" data-es="Desde $200" data-en="From $200">Desde $200</div>
+                        <a href="#" class="service-cta" data-es="Solicitar Capacitación" data-en="Request Training">Solicitar Capacitación</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <script defer src="../../js/scripts.js"></script>
+</body>
+</html>
