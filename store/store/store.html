@@ -73,7 +73,7 @@
                 <button class="filter-btn" data-category="componentes" data-es="Componentes" data-en="Components">Componentes</button>
                 <button class="filter-btn" data-category="perifericos" data-es="Periféricos" data-en="Peripherals">Periféricos</button>
                 <button class="filter-btn" data-category="almacenamiento" data-es="Almacenamiento" data-en="Storage">Almacenamiento</button>
-            </div>
+        </div>
 
             <!-- Catálogo de productos -->
             <div class="products-catalog">
@@ -257,7 +257,7 @@
                     // Actualizar botones activos
                     filterBtns.forEach(b => b.classList.remove('active'));
                     this.classList.add('active');
-                    
+
                     // Filtrar productos
                     productCards.forEach(card => {
                         if (category === 'todos' || card.getAttribute('data-category') === category) {

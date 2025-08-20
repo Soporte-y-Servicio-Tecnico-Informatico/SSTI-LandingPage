@@ -61,23 +61,23 @@ class SSTIHeader {
 
     // Efectos de scroll del header
     initScrollEffects() {
-        // Efecto de header al hacer scroll
-        let lastScrollTop = 0;
-        const header = document.querySelector('.header');
+        // El header permanece siempre visible (comentado el efecto de ocultamiento)
+        // let lastScrollTop = 0;
+        // const header = document.querySelector('.header');
 
-        window.addEventListener('scroll', () => {
-            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        // window.addEventListener('scroll', () => {
+        //     const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
             
-            if (scrollTop > lastScrollTop && scrollTop > 100) {
-                // Scrolling down
-                header.classList.add('header-hidden');
-            } else {
-                // Scrolling up
-                header.classList.remove('header-hidden');
-            }
+        //     if (scrollTop > lastScrollTop && scrollTop > 100) {
+        //         // Scrolling down
+        //         header.classList.add('header-hidden');
+        //     } else {
+        //         // Scrolling up
+        //         header.classList.remove('header-hidden');
+        //     }
             
-            lastScrollTop = scrollTop;
-        });
+        //     lastScrollTop = scrollTop;
+        // });
 
         // Scroll suave para enlaces internos
         this.initSmoothScroll();
