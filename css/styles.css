@@ -1326,21 +1326,13 @@ main {
     overflow: hidden;
 }
 
+/* Se elimina la línea superior en hover de las tarjetas de Tienda */
 .tienda-card::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: 4px;
-    background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
-    transform: scaleX(0);
-    transition: transform 0.3s ease;
+    content: none;
 }
 
-.tienda-card:hover::before {
-    transform: scaleX(1);
-}
+/* Sin efecto de línea superior en hover */
+.tienda-card:hover::before { }
 
 .tienda-card:hover {
     transform: translateY(-8px);
@@ -1417,6 +1409,23 @@ main {
 .tienda-btn:hover {
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(65, 193, 186, 0.3);
+}
+
+/* Estilo del botón secundario en Tienda igual a "Agendar Diagnóstico" */
+.tienda .btn-secondary {
+    color: var(--secondary-color);
+    border: 2px solid var(--secondary-color);
+    background: transparent;
+}
+
+.tienda .btn-secondary:hover {
+    background: var(--secondary-color);
+    color: #fff;
+    border-color: var(--secondary-color);
+}
+
+[data-theme="dark"] .tienda .btn-secondary:hover {
+    color: var(--background-color);
 }
 
 /* Dark mode para tienda */
