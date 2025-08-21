@@ -1,0 +1,276 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos y Hardware - SSTI</title>
+    <link rel="stylesheet" href="../../css/styles.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .store-page-header { padding-top: 120px; padding-bottom: 20px; text-align: center; }
+        .back-home { display: inline-flex; align-items: center; gap: 8px; text-decoration: none; color: var(--primary-color); font-weight: 600; }
+        .store-content { padding: 20px 0 80px; }
+        .category-filter { text-align: center; margin-bottom: 40px; }
+        .filter-btn { background: var(--background-color); border: 1px solid var(--border-color); color: var(--text-primary); padding: 10px 20px; margin: 0 5px; border-radius: 8px; cursor: pointer; transition: all 0.3s ease; }
+        .filter-btn.active, .filter-btn:hover { background: var(--primary-color); color: white; border-color: var(--primary-color); }
+        .products-catalog { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .product-card { background: var(--background-color); border: 1px solid var(--border-color); border-radius: 16px; overflow: hidden; box-shadow: 0 10px 30px var(--shadow-color); transition: all 0.3s ease; }
+        .product-card:hover { transform: translateY(-5px); box-shadow: 0 20px 40px var(--shadow-color); border-color: var(--primary-color); }
+        .product-image { width: 100%; height: 200px; object-fit: cover; }
+        .product-info { padding: 20px; }
+        .product-category { color: var(--primary-color); font-size: 0.9rem; font-weight: 600; margin-bottom: 10px; }
+        .product-title { font-size: 1.3rem; color: var(--text-primary); margin-bottom: 10px; }
+        .product-description { color: var(--text-secondary); margin-bottom: 15px; line-height: 1.5; }
+        .product-specs { margin-bottom: 20px; }
+        .product-specs li { color: var(--text-secondary); margin-bottom: 5px; font-size: 0.9rem; }
+        .product-price { font-size: 1.4rem; font-weight: 700; color: var(--primary-color); margin-bottom: 20px; }
+        .product-actions { display: flex; gap: 10px; }
+        .btn-primary { background: var(--primary-color); color: white; padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; }
+        .btn-primary:hover { background: #3aa8a1; transform: translateY(-2px); }
+        .btn-secondary { background: transparent; color: var(--primary-color); border: 1px solid var(--primary-color); padding: 10px 20px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; }
+        .btn-secondary:hover { background: var(--primary-color); color: white; }
+    </style>
+    <script defer src="../../js/toggleDarkMode.js"></script>
+    <script defer src="../../js/translate.js"></script>
+</head>
+<body>
+    <header class="header">
+        <nav class="nav-container">
+            <div class="nav-left">
+                <div class="logo-container">
+                    <a href="../../index.html" class="back-home" aria-label="Inicio">
+                        <i class="fas fa-arrow-left"></i>
+                        <span data-es="Inicio" data-en="Home">Inicio</span>
+                    </a>
+                </div>
+            </div>
+            <div class="nav-right">
+                <div class="controls">
+                    <button class="language-toggle" id="languageToggle">
+                        <span class="lang-text" data-es="ES" data-en="EN">ES</span>
+                        <i class="fas fa-globe"></i>
+                    </button>
+                    <button class="theme-toggle" id="themeToggle">
+                        <i class="fas fa-moon theme-icon-dark"></i>
+                        <i class="fas fa-sun theme-icon-light"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="store">
+        <div class="container store-page-header">
+            <h1 class="section-title" data-es="Productos y Hardware" data-en="Products and Hardware">Productos y Hardware</h1>
+            <p class="section-subtitle" data-es="Encuentra todo lo que necesitas para armar o mejorar tu PC" data-en="Find everything you need to build or upgrade your PC">Encuentra todo lo que necesitas para armar o mejorar tu PC</p>
+        </div>
+
+        <div class="container store-content">
+            <!-- Filtro de categorías -->
+            <div class="category-filter">
+                <button class="filter-btn active" data-category="todos" data-es="Todos" data-en="All">Todos</button>
+                <button class="filter-btn" data-category="computadoras" data-es="Computadoras" data-en="Computers">Computadoras</button>
+                <button class="filter-btn" data-category="componentes" data-es="Componentes" data-en="Components">Componentes</button>
+                <button class="filter-btn" data-category="perifericos" data-es="Periféricos" data-en="Peripherals">Periféricos</button>
+                <button class="filter-btn" data-category="almacenamiento" data-es="Almacenamiento" data-en="Storage">Almacenamiento</button>
+        </div>
+
+            <!-- Catálogo de productos 
+            <div class="products-catalog">
+                <!-- Computadoras 
+                <div class="product-card" data-category="computadoras">
+                    <img src="https://images.unsplash.com/photo-1517336714731-489689fd1ca8?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D" alt="Laptop Gaming" class="product-image">
+                    <div class="product-info">
+                        <div class="product-category" data-es="Computadoras" data-en="Computers">Computadoras</div>
+                        <h3 class="product-title" data-es="Laptop Gaming Pro" data-en="Gaming Pro Laptop">Laptop Gaming Pro</h3>
+                        <p class="product-description" data-es="Laptop de alto rendimiento para gaming y trabajo profesional" data-en="High-performance laptop for gaming and professional work">Laptop de alto rendimiento para gaming y trabajo profesional</p>
+                        <ul class="product-specs">
+                            <li data-es="Intel Core i7 12th Gen" data-en="Intel Core i7 12th Gen">Intel Core i7 12th Gen</li>
+                            <li data-es="16GB RAM DDR4" data-en="16GB DDR4 RAM">16GB RAM DDR4</li>
+                            <li data-es="512GB SSD NVMe" data-en="512GB NVMe SSD">512GB SSD NVMe</li>
+                            <li data-es="RTX 3060 6GB" data-en="RTX 3060 6GB">RTX 3060 6GB</li>
+                        </ul>
+                        <div class="product-price" data-es="$1,299" data-en="$1,299">$1,299</div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-primary" data-es="Comprar Ahora" data-en="Buy Now">Comprar Ahora</a>
+                            <a href="#" class="btn-secondary" data-es="Ver Detalles" data-en="View Details">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="computadoras">
+                    <img src="https://images.unsplash.com/photo-1547082299-de196ea013d6?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDN8fHxlbnwwfHx8fHw%3D" alt="PC Desktop" class="product-image">
+                    <div class="product-info">
+                        <div class="product-category" data-es="Computadoras" data-en="Computers">Computadoras</div>
+                        <h3 class="product-title" data-es="PC Desktop Empresarial" data-en="Business Desktop PC">PC Desktop Empresarial</h3>
+                        <p class="product-description" data-es="Computadora de escritorio ideal para oficina y trabajo diario" data-en="Desktop computer ideal for office and daily work">Computadora de escritorio ideal para oficina y trabajo diario</p>
+                        <ul class="product-specs">
+                            <li data-es="Intel Core i5 11th Gen" data-en="Intel Core i5 11th Gen">Intel Core i5 11th Gen</li>
+                            <li data-es="8GB RAM DDR4" data-en="8GB DDR4 RAM">8GB RAM DDR4</li>
+                            <li data-es="256GB SSD" data-en="256GB SSD">256GB SSD</li>
+                            <li data-es="Intel UHD Graphics" data-en="Intel UHD Graphics">Intel UHD Graphics</li>
+                        </ul>
+                        <div class="product-price" data-es="$599" data-en="$599">$599</div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-primary" data-es="Comprar Ahora" data-en="Buy Now">Comprar Ahora</a>
+                            <a href="#" class="btn-secondary" data-es="Ver Detalles" data-en="View Details">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Componentes 
+                <div class="product-card" data-category="componentes">
+                    <img src="https://images.unsplash.com/photo-1593640408182-31c70c8268f7?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D" alt="Procesador Intel" class="product-image">
+                    <div class="product-info">
+                        <div class="product-category" data-es="Componentes" data-en="Components">Componentes</div>
+                        <h3 class="product-title" data-es="Intel Core i9 13th Gen" data-en="Intel Core i9 13th Gen">Intel Core i9 13th Gen</h3>
+                        <p class="product-description" data-es="Procesador de última generación para máximo rendimiento" data-en="Latest generation processor for maximum performance">Procesador de última generación para máximo rendimiento</p>
+                        <ul class="product-specs">
+                            <li data-es="24 núcleos (8P + 16E)" data-en="24 cores (8P + 16E)">24 núcleos (8P + 16E)</li>
+                            <li data-es="32 hilos" data-en="32 threads">32 hilos</li>
+                            <li data-es="5.8GHz Max Turbo" data-en="5.8GHz Max Turbo">5.8GHz Max Turbo</li>
+                            <li data-es="Socket LGA1700" data-en="Socket LGA1700">Socket LGA1700</li>
+                        </ul>
+                        <div class="product-price" data-es="$549" data-en="$549">$549</div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-primary" data-es="Comprar Ahora" data-en="Buy Now">Comprar Ahora</a>
+                            <a href="#" class="btn-secondary" data-es="Ver Detalles" data-en="View Details">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="componentes">
+                    <img src="https://images.unsplash.com/photo-1597872200969-2b65d186604f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D" alt="Memoria RAM" class="product-image">
+                    <div class="product-info">
+                        <div class="product-category" data-es="Componentes" data-en="Components">Componentes</div>
+                        <h3 class="product-title" data-es="Corsair Vengeance 32GB" data-en="Corsair Vengeance 32GB">Corsair Vengeance 32GB</h3>
+                        <p class="product-description" data-es="Kit de memoria DDR5 de alto rendimiento" data-en="High-performance DDR5 memory kit">Kit de memoria DDR5 de alto rendimiento</p>
+                        <ul class="product-specs">
+                            <li data-es="DDR5 5600MHz" data-en="DDR5 5600MHz">DDR5 5600MHz</li>
+                            <li data-es="CL36" data-en="CL36">CL36</li>
+                            <li data-es="2x16GB" data-en="2x16GB">2x16GB</li>
+                            <li data-es="RGB personalizable" data-en="Customizable RGB">RGB personalizable</li>
+                        </ul>
+                        <div class="product-price" data-es="$189" data-en="$189">$189</div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-primary" data-es="Comprar Ahora" data-en="Buy Now">Comprar Ahora</a>
+                            <a href="#" class="btn-secondary" data-es="Ver Detalles" data-en="View Details">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Periféricos 
+                <div class="product-card" data-category="perifericos">
+                    <img src="https://images.unsplash.com/photo-1527864550417-7fd91fc51a46?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D" alt="Teclado Mecánico" class="product-image">
+                    <div class="product-info">
+                        <div class="product-category" data-es="Periféricos" data-en="Peripherals">Periféricos</div>
+                        <h3 class="product-title" data-es="Logitech G Pro X" data-en="Logitech G Pro X">Logitech G Pro X</h3>
+                        <p class="product-description" data-es="Teclado mecánico gaming con switches intercambiables" data-en="Gaming mechanical keyboard with swappable switches">Teclado mecánico gaming con switches intercambiables</p>
+                        <ul class="product-specs">
+                            <li data-es="Switches GX Blue" data-en="GX Blue switches">Switches GX Blue</li>
+                            <li data-es="RGB personalizable" data-en="Customizable RGB">RGB personalizable</li>
+                            <li data-es="Cable desmontable" data-en="Detachable cable">Cable desmontable</li>
+                            <li data-es="Diseño compacto" data-en="Compact design">Diseño compacto</li>
+                        </ul>
+                        <div class="product-price" data-es="$149" data-en="$149">$149</div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-primary" data-es="Comprar Ahora" data-en="Buy Now">Comprar Ahora</a>
+                            <a href="#" class="btn-secondary" data-es="Ver Detalles" data-en="View Details">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="perifericos">
+                    <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D" alt="Mouse Gaming" class="product-image">
+                    <div class="product-info">
+                        <div class="product-category" data-es="Periféricos" data-en="Peripherals">Periféricos</div>
+                        <h3 class="product-title" data-es="Razer DeathAdder V3" data-en="Razer DeathAdder V3">Razer DeathAdder V3</h3>
+                        <p class="product-description" data-es="Mouse gaming ergonómico con sensor óptico de alta precisión" data-en="Ergonomic gaming mouse with high-precision optical sensor">Mouse gaming ergonómico con sensor óptico de alta precisión</p>
+                        <ul class="product-specs">
+                            <li data-es="Sensor Focus Pro 30K" data-en="Focus Pro 30K sensor">Sensor Focus Pro 30K</li>
+                            <li data-es="30,000 DPI" data-en="30,000 DPI">30,000 DPI</li>
+                            <li data-es="8 botones programables" data-en="8 programmable buttons">8 botones programables</li>
+                            <li data-es="Peso 59g" data-en="59g weight">Peso 59g</li>
+                        </ul>
+                        <div class="product-price" data-es="$79" data-en="$79">$79</div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-primary" data-es="Comprar Ahora" data-en="Buy Now">Comprar Ahora</a>
+                            <a href="#" class="btn-secondary" data-es="Ver Detalles" data-en="View Details">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Almacenamiento 
+                <div class="product-card" data-category="almacenamiento">
+                    <img src="https://images.unsplash.com/photo-1597872200969-2b65d186604f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D" alt="SSD NVMe" class="product-image">
+                    <div class="product-info">
+                        <div class="product-category" data-es="Almacenamiento" data-en="Storage">Almacenamiento</div>
+                        <h3 class="product-title" data-es="Samsung 970 EVO Plus 1TB" data-en="Samsung 970 EVO Plus 1TB">Samsung 970 EVO Plus 1TB</h3>
+                        <p class="product-description" data-es="SSD NVMe de alta velocidad para máximo rendimiento" data-en="High-speed NVMe SSD for maximum performance">SSD NVMe de alta velocidad para máximo rendimiento</p>
+                        <ul class="product-specs">
+                            <li data-es="NVMe PCIe 3.0 x4" data-en="NVMe PCIe 3.0 x4">NVMe PCIe 3.0 x4</li>
+                            <li data-es="3,500 MB/s lectura" data-en="3,500 MB/s read">3,500 MB/s lectura</li>
+                            <li data-es="3,300 MB/s escritura" data-en="3,300 MB/s write">3,300 MB/s escritura</li>
+                            <li data-es="Garantía 5 años" data-en="5-year warranty">Garantía 5 años</li>
+                        </ul>
+                        <div class="product-price" data-es="$89" data-en="$89">$89</div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-primary" data-es="Comprar Ahora" data-en="Buy Now">Comprar Ahora</a>
+                            <a href="#" class="btn-secondary" data-es="Ver Detalles" data-en="View Details">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="product-card" data-category="almacenamiento">
+                    <img src="https://images.unsplash.com/photo-1597872200969-2b65d186604f?w=500&auto=format&fit=crop&q=60&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fHw%3D" alt="Disco Duro Externo" class="product-image">
+                    <div class="product-info">
+                        <div class="product-category" data-es="Almacenamiento" data-en="Storage">Almacenamiento</div>
+                        <h3 class="product-title" data-es="WD My Passport 2TB" data-en="WD My Passport 2TB">WD My Passport 2TB</h3>
+                        <p class="product-description" data-es="Disco duro externo portátil con protección de contraseña" data-en="Portable external hard drive with password protection">Disco duro externo portátil con protección de contraseña</p>
+                        <ul class="product-specs">
+                            <li data-es="USB 3.0" data-en="USB 3.0">USB 3.0</li>
+                            <li data-es="2TB de capacidad" data-en="2TB capacity">2TB de capacidad</li>
+                            <li data-es="Protección con contraseña" data-en="Password protection">Protección con contraseña</li>
+                            <li data-es="Compatible con PC y Mac" data-en="PC and Mac compatible">Compatible con PC y Mac</li>
+                        </ul>
+                        <div class="product-price" data-es="$69" data-en="$69">$69</div>
+                        <div class="product-actions">
+                            <a href="#" class="btn-primary" data-es="Comprar Ahora" data-en="Buy Now">Comprar Ahora</a>
+                            <a href="#" class="btn-secondary" data-es="Ver Detalles" data-en="View Details">Ver Detalles</a>
+                        </div>
+                    </div>
+                </div>
+            </div>-->
+        </div>
+    </main>
+
+    <script>
+        // Filtro de categorías
+        document.addEventListener('DOMContentLoaded', function() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            const productCards = document.querySelectorAll('.product-card');
+
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const category = this.getAttribute('data-category');
+                    
+                    // Actualizar botones activos
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+
+                    // Filtrar productos
+                    productCards.forEach(card => {
+                        if (category === 'todos' || card.getAttribute('data-category') === category) {
+                            card.style.display = 'block';
+                        } else {
+                            card.style.display = 'none';
+                        }
+                    });
+                });
+            });
+        });
+    </script>
+
+    <script defer src="../../js/scripts.js"></script>
+</body>
+</html>

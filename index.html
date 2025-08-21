@@ -27,7 +27,7 @@
             </div>
 
             <div class="nav-center">
-                <ul class="nav-menu">
+                                <ul class="nav-menu">
                     <li><a href="#inicio" class="nav-link" data-i18n="nav.home" data-es="Inicio"
                             data-en="Home">Inicio</a></li>
                     <li><a href="#nosotros" class="nav-link" data-i18n="nav.about" data-es="Nosotros"
@@ -36,8 +36,14 @@
                             data-en="Services">Servicios</a></li>
                     <li><a href="#blog" class="nav-link" data-i18n="nav.blog" data-es="Blog" data-en="Blog">Blog</a>
                     </li>
-                    <li><a href="#tienda" class="nav-link" data-i18n="nav.store" data-es="Tienda"
-                            data-en="Store">Tienda</a></li>
+                    <li class="nav-dropdown">
+                        <a href="#tienda" class="nav-link" data-i18n="nav.store" data-es="Tienda"
+                            data-en="Store">Tienda <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="store/services/services.html" data-i18n="nav.store.services" data-es="Servicios" data-en="Services">Servicios</a></li>
+                            <li><a href="store/store/store.html" data-i18n="nav.store.products" data-es="Productos" data-en="Products">Productos</a></li>
+                        </ul>
+                    </li>
                     <li><a href="#contacto" class="nav-link" data-i18n="nav.contact" data-es="Contacto"
                             data-en="Contact">Contacto</a></li>
                 </ul>
@@ -494,6 +500,84 @@
             <div class="blog-actions">
                 <a href="blog/blog.html" class="btn btn-primary" data-i18n="blog.cta" data-es="Ver todas las noticias"
                     data-en="View all news">Ver todas las noticias</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tienda Section -->
+    <section class="tienda" id="tienda">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title" data-i18n="tienda.title" data-es="Nuestra Tienda"
+                    data-en="Our Store">Nuestra Tienda</h2>
+                <p class="section-subtitle" data-i18n="tienda.subtitle"
+                    data-es="Encuentra todo lo que necesitas para tu equipo de cómputo y servicios técnicos especializados."
+                    data-en="Find everything you need for your computer equipment and specialized technical services.">
+                    Encuentra todo lo que necesitas para tu equipo de cómputo y servicios técnicos especializados.</p>
+            </div>
+
+            <div class="tienda-grid">
+                <div class="tienda-card servicios-card">
+                    <div class="tienda-icon">
+                        <i class="fas fa-tools"></i>
+                    </div>
+                    <h3 class="tienda-title" data-i18n="tienda.services.title" data-es="Servicios Técnicos"
+                        data-en="Technical Services">Servicios Técnicos</h3>
+                    <p class="tienda-description" data-i18n="tienda.services.description"
+                        data-es="Soporte técnico profesional, mantenimiento preventivo, reparación de hardware, instalación de software y mucho más."
+                        data-en="Professional technical support, preventive maintenance, hardware repair, software installation and much more.">
+                        Soporte técnico profesional, mantenimiento preventivo, reparación de hardware, instalación de software y mucho más.
+                    </p>
+                    <div class="tienda-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span data-i18n="tienda.services.feature1" data-es="Soporte 24/7" data-en="24/7 Support">Soporte 24/7</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span data-i18n="tienda.services.feature2" data-es="Garantía 100%" data-en="100% Guarantee">Garantía 100%</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span data-i18n="tienda.services.feature3" data-es="Técnicos certificados" data-en="Certified technicians">Técnicos certificados</span>
+                        </div>
+                    </div>
+                                            <a href="store/services/services.html" class="btn btn-primary tienda-btn">
+                        <i class="fas fa-arrow-right"></i>
+                        <span class="btn-text" data-i18n="tienda.services.cta" data-es="Ver Servicios" data-en="View Services">Ver Servicios</span>
+                    </a>
+                </div>
+
+                <div class="tienda-card productos-card">
+                    <div class="tienda-icon">
+                        <i class="fas fa-laptop"></i>
+                    </div>
+                    <h3 class="tienda-title" data-i18n="tienda.products.title" data-es="Productos y Hardware"
+                        data-en="Products and Hardware">Productos y Hardware</h3>
+                    <p class="tienda-description" data-i18n="tienda.products.description"
+                        data-es="Equipos de cómputo, componentes, periféricos y todo lo necesario para armar o mejorar tu PC."
+                        data-en="Computer equipment, components, peripherals and everything needed to build or upgrade your PC.">
+                        Equipos de cómputo, componentes, periféricos y todo lo necesario para armar o mejorar tu PC.
+                    </p>
+                    <div class="tienda-features">
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span data-i18n="tienda.products.feature1" data-es="Productos originales" data-en="Original products">Productos originales</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span data-i18n="tienda.products.feature2" data-es="Garantía oficial" data-en="Official warranty">Garantía oficial</span>
+                        </div>
+                        <div class="feature-item">
+                            <i class="fas fa-check"></i>
+                            <span data-i18n="tienda.products.feature3" data-es="Asesoría especializada" data-en="Specialized advice">Asesoría especializada</span>
+                        </div>
+                    </div>
+                                            <a href="store/store/store.html" class="btn btn-secondary tienda-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span class="btn-text" data-i18n="tienda.products.cta" data-es="Ver Productos" data-en="View Products">Ver Productos</span>
+                    </a>
+                </div>
             </div>
         </div>
     </section>
