@@ -12,7 +12,13 @@
         .services-list { padding: 20px 0 80px; }
         .service-category { margin-bottom: 60px; }
         .service-category h2 { font-size: 2rem; margin-bottom: 30px; color: var(--text-primary); text-align: center; }
-        .services-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 30px; }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 360px));
+            gap: 30px;
+            justify-content: center;
+            align-items: stretch;
+        }
         .service-item { background: var(--background-color); border: 1px solid var(--border-color); border-radius: 16px; padding: 30px; box-shadow: 0 10px 30px var(--shadow-color); transition: all 0.3s ease; }
         .service-item:hover { transform: translateY(-5px); box-shadow: 0 20px 40px var(--shadow-color); border-color: var(--primary-color); }
         .service-item h3 { font-size: 1.4rem; margin-bottom: 15px; color: var(--text-primary); }
@@ -22,6 +28,7 @@
         .service-price { font-size: 1.3rem; font-weight: 700; color: var(--primary-color); margin-bottom: 20px; }
         .service-cta { display: inline-block; background: var(--primary-color); color: white; padding: 12px 24px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: all 0.3s ease; }
         .service-cta:hover { background: #3aa8a1; transform: translateY(-2px); }
+        .services-note { font-size: 0.9rem; color: var(--text-secondary); text-align: center; margin-top: 10px; }
     </style>
     <script defer src="../../js/toggleDarkMode.js"></script>
     <script defer src="../../js/translate.js"></script>
@@ -64,6 +71,18 @@
                 <h2 data-es="Soporte Técnico" data-en="Technical Support">Soporte Técnico</h2>
                 <div class="services-grid">
                     <div class="service-item">
+                        <h3 data-es="Asesoría en TI" data-en="IT Consulting">Asesoría en TI</h3>
+                        <p data-es="Orientación experta para compras, mejoras e implementación de soluciones" data-en="Expert guidance for purchases, upgrades and solution implementation">Orientación experta para compras, mejoras e implementación de soluciones</p>
+                        <ul class="service-features">
+                            <li data-es="Evaluación de necesidades y presupuesto" data-en="Needs and budget assessment">Evaluación de necesidades y presupuesto</li>
+                            <li data-es="Recomendación de hardware y software" data-en="Hardware and software recommendations">Recomendación de hardware y software</li>
+                            <li data-es="Plan de mejora y migraciones" data-en="Upgrade and migration plan">Plan de mejora y migraciones</li>
+                            <li data-es="Acompañamiento en compra e instalación" data-en="Support during purchase and installation">Acompañamiento en compra e instalación</li>
+                        </ul>
+                        <div class="service-price" data-es="Desde $35" data-en="From $35">Desde $35</div>
+                        <a href="#" class="service-cta" data-es="Solicitar Asesoría" data-en="Request Consulting">Solicitar Asesoría</a>
+                    </div>
+                    <div class="service-item">
                         <h3 data-es="Mantenimiento Preventivo" data-en="Preventive Maintenance">Mantenimiento Preventivo</h3>
                         <p data-es="Mantenimiento regular para mantener tu equipo funcionando de manera óptima" data-en="Regular maintenance to keep your equipment running optimally">Mantenimiento regular para mantener tu equipo funcionando de manera óptima</p>
                         <ul class="service-features">
@@ -71,20 +90,21 @@
                             <li data-es="Actualización de software" data-en="Software updates">Actualización de software</li>
                             <li data-es="Verificación de seguridad" data-en="Security verification">Verificación de seguridad</li>
                         </ul>
-                        <div class="service-price" data-es="Desde $50" data-en="From $50">Desde $50</div>
+                        <div class="service-price" data-es="Desde $40" data-en="From $40">Desde $40</div>
                         <a href="#" class="service-cta" data-es="Solicitar Servicio" data-en="Request Service">Solicitar Servicio</a>
                     </div>
 
                     <div class="service-item">
-                        <h3 data-es="Reparación de Hardware" data-en="Hardware Repair">Reparación de Hardware</h3>
-                        <p data-es="Reparación profesional de componentes y equipos informáticos" data-en="Professional repair of computer components and equipment">Reparación profesional de componentes y equipos informáticos</p>
+                        <h3 data-es="Cambio de Hardware" data-en="Hardware Replacement">Cambio de Hardware</h3>
+                        <p data-es="Sustitución profesional de componentes con garantía y asesoría completa" data-en="Professional component replacement with full warranty and guidance">Sustitución profesional de componentes con garantía y asesoría completa</p>
                         <ul class="service-features">
-                            <li data-es="Diagnóstico gratuito" data-en="Free diagnosis">Diagnóstico gratuito</li>
-                            <li data-es="Garantía en repuestos" data-en="Warranty on parts">Garantía en repuestos</li>
-                            <li data-es="Reparación rápida" data-en="Fast repair">Reparación rápida</li>
+                            <li data-es="Diagnóstico del problema" data-en="Issue diagnosis">Diagnóstico del problema</li>
+                            <li data-es="Cotización y compra del repuesto" data-en="Quote and spare purchase">Cotización y compra del repuesto</li>
+                            <li data-es="Reparación e instalación del repuesto" data-en="Part replacement and installation">Reparación e instalación del repuesto</li>
+                            <li data-es="Garantía del repuesto y mano de obra" data-en="Part and labor warranty">Garantía del repuesto y mano de obra</li>
                         </ul>
                         <div class="service-price" data-es="Desde $80" data-en="From $80">Desde $80</div>
-                        <a href="#" class="service-cta" data-es="Solicitar Reparación" data-en="Request Repair">Solicitar Reparación</a>
+                        <a href="#" class="service-cta" data-es="Solicitar Cambio" data-en="Request Replacement">Solicitar Cambio</a>
                     </div>
 
                     <div class="service-item">
@@ -95,10 +115,11 @@
                             <li data-es="Aplicaciones de oficina" data-en="Office applications">Aplicaciones de oficina</li>
                             <li data-es="Software especializado" data-en="Specialized software">Software especializado</li>
                         </ul>
-                        <div class="service-price" data-es="Desde $40" data-en="From $40">Desde $40</div>
+                        <div class="service-price" data-es="Desde $50" data-en="From $50">Desde $50</div>
                         <a href="#" class="service-cta" data-es="Solicitar Instalación" data-en="Request Installation">Solicitar Instalación</a>
                     </div>
                 </div>
+                <p class="services-note" data-es="Los precios y tiempos de reparación pueden variar según diagnóstico y disponibilidad de repuestos." data-en="Prices and repair times may vary depending on diagnosis and parts availability.">Los precios y tiempos de reparación pueden variar según diagnóstico y disponibilidad de repuestos.</p>
             </div>
 
             <!-- Reparación y Mantenimiento -->
@@ -119,14 +140,27 @@
 
                     <div class="service-item">
                         <h3 data-es="Configuración de Redes" data-en="Network Configuration">Configuración de Redes</h3>
-                        <p data-es="Configuración y optimización de redes domésticas y empresariales" data-en="Configuration and optimization of home and business networks">Configuración y optimización de redes domésticas y empresariales</p>
+                        <p data-es="Configuración de redes domésticas y empresariales" data-en="Configuration of home and business networks">Configuración de redes domésticas y empresariales</p>
                         <ul class="service-features">
                             <li data-es="Configuración de routers" data-en="Router configuration">Configuración de routers</li>
-                            <li data-es="Optimización de WiFi" data-en="WiFi optimization">Optimización de WiFi</li>
+                            <li data-es="Diagnóstico y solución de conectividad" data-en="Connectivity troubleshooting">Diagnóstico y solución de conectividad</li>
                             <li data-es="Seguridad de red" data-en="Network security">Seguridad de red</li>
                         </ul>
                         <div class="service-price" data-es="Desde $70" data-en="From $70">Desde $70</div>
                         <a href="#" class="service-cta" data-es="Solicitar Configuración" data-en="Request Configuration">Solicitar Configuración</a>
+                    </div>
+
+                    <div class="service-item">
+                        <h3 data-es="Configuración y Limpieza de Impresoras" data-en="Printer Setup and Cleaning">Configuración y Limpieza de Impresoras</h3>
+                        <p data-es="Instalación, mantenimiento preventivo y calibración para una impresión óptima" data-en="Installation, preventive maintenance and calibration for optimal printing">Instalación, mantenimiento preventivo y calibración para una impresión óptima</p>
+                        <ul class="service-features">
+                            <li data-es="Instalación y configuración (USB/Red)" data-en="Installation and setup (USB/Network)">Instalación y configuración (USB/Red)</li>
+                            <li data-es="Mantenimiento preventivo" data-en="Preventive maintenance">Mantenimiento preventivo</li>
+                            <li data-es="Calibración y calidad de impresión" data-en="Calibration and print quality">Calibración y calidad de impresión</li>
+                            <li data-es="Resolución de atascos y revisión de errores" data-en="Correcting paper jams and checking for errors">Resolución de atascos y revisión de errores</li>
+                        </ul>
+                        <div class="service-price" data-es="Desde $30" data-en="From $30">Desde $30</div>
+                        <a href="#" class="service-cta" data-es="Solicitar Servicio" data-en="Request Service">Solicitar Servicio</a>
                     </div>
 
                     <div class="service-item">
@@ -139,6 +173,24 @@
                         </ul>
                         <div class="service-price" data-es="Desde $90" data-en="From $90">Desde $90</div>
                         <a href="#" class="service-cta" data-es="Solicitar Respaldo" data-en="Request Backup">Solicitar Respaldo</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desarrollo web y publicidad digital -->
+            <div class="service-category">
+                <h2 data-es="Desarrollo web y publicidad digital" data-en="Web development and digital marketing">Desarrollo web y publicidad digital</h2>
+                <div class="services-grid">
+                    <div class="service-item">
+                        <h3 data-es="Servicios incluidos" data-en="Included services">Servicios incluidos</h3>
+                        <p data-es="Soluciones enfocadas en presencia online y conversión" data-en="Solutions focused on online presence and conversion">Soluciones enfocadas en presencia online y conversión</p>
+                        <ul class="service-features">
+                            <li data-es="Landing pages personalizadas" data-en="Custom landing pages">Landing pages personalizadas</li>
+                            <li data-es="Páginas promocionales de productos y servicios" data-en="Promotional pages for products and services">Páginas promocionales de productos y servicios</li>
+                            <li data-es="Registro de dominio y hosting básico" data-en="Domain registration and basic hosting">Registro de dominio y hosting básico</li>
+                        </ul>
+                        <div class="service-price" data-es="Desde $120" data-en="From $120">Desde $120</div>
+                        <a href="#" class="service-cta" data-es="Solicitar Propuesta" data-en="Request Proposal">Solicitar Propuesta</a>
                     </div>
                 </div>
             </div>
