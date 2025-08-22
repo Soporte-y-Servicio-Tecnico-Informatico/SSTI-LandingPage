@@ -582,10 +582,118 @@
         </div>
     </section>
 
+    <!-- Contacto Section -->
+    <section class="contact-section" id="contacto">
+        <div class="container">
+            <div class="contact-header">
+                <h2 class="section-title" data-es="Contáctanos" data-en="Contact Us">Contáctanos</h2>
+                <p class="section-subtitle" data-es="¿Tienes alguna pregunta o necesitas ayuda? Estamos aquí para ayudarte" data-en="Do you have any questions or need help? We're here to help you">¿Tienes alguna pregunta o necesitas ayuda? Estamos aquí para ayudarte</p>
+            </div>
+
+            <div class="contact-content">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-envelope"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3 data-es="Soporte Técnico" data-en="Technical Support">Soporte Técnico</h3>
+                            <p>soporteservicioti@gmail.com</p>
+                        </div>
+                    </div>
+                    
+                    <!-- <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-lightbulb"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3 data-es="Sugerencias" data-en="Suggestions">Sugerencias</h3>
+                            <p>sstigerencia@gmail.com</p>
+                        </div>
+                    </div> -->
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3 data-es="Horario de Atención" data-en="Business Hours">Horario de Atención</h3>
+                            <p data-es="Lunes a Viernes: 8:00 AM - 6:00 PM" data-en="Monday to Friday: 8:00 AM - 6:00 PM">Lunes a Viernes: 8:00 AM - 6:00 PM</p>
+                            <p data-es="Sábados: 9:00 AM - 1:00 PM" data-en="Saturdays: 9:00 AM - 1:00 PM">Sábados: 9:00 AM - 1:00 PM</p>
+                        </div>
+                    </div>
+
+                    <div class="contact-item">
+                        <div class="contact-icon">
+                            <i class="fas fa-phone"></i>
+                        </div>
+                        <div class="contact-details">
+                            <h3 data-es="Teléfono" data-en="Phone">Teléfono</h3>
+                            <p data-es="+506 8642 2654" data-en="+506 8642 2654">+506 8642 2654</p>
+                            <p>
+                                <a href="https://wa.me/50686422654" class="btn-whatsapp" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
+                                    <i class="fab fa-whatsapp"></i>
+                                    <span data-es="WhatsApp disponible" data-en="WhatsApp available">WhatsApp disponible</span>
+                                </a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact-form-container">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-group">
+                            <label for="name" data-es="Nombre Completo *" data-en="Full Name *">Nombre Completo *</label>
+                            <input type="text" id="name" name="name" required data-es="Tu nombre completo" data-en="Your full name" placeholder="Tu nombre completo">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" data-es="Correo Electrónico *" data-en="Email *">Correo Electrónico *</label>
+                            <input type="email" id="email" name="email" required data-es="Tu correo electrónico" data-en="Your email" placeholder="Tu correo electrónico">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" data-es="Teléfono" data-en="Phone">Teléfono</label>
+                            <input type="tel" id="phone" name="phone" data-es="Tu número de teléfono" data-en="Your phone number" placeholder="Tu número de teléfono">
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject" data-es="Asunto *" data-en="Subject *">Asunto *</label>
+                            <select id="subject" name="subject" required>
+                                <option value="" data-es="Selecciona un asunto" data-en="Select a subject">Selecciona un asunto</option>
+                                <option value="soporte" data-es="Soporte Técnico" data-en="Technical Support">Soporte Técnico</option>
+                                <option value="ventas" data-es="Consultas de Ventas" data-en="Sales Inquiries">Consultas de Ventas</option>
+                                <option value="sugerencia" data-es="Sugerencia" data-en="Suggestion">Sugerencia</option>
+                                <option value="reclamo" data-es="Reclamo" data-en="Complaint">Reclamo</option>
+                                <option value="otro" data-es="Otro" data-en="Other">Otro</option>
+                            </select>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" data-es="Mensaje *" data-en="Message *">Mensaje *</label>
+                            <textarea id="message" name="message" rows="5" required data-es="Describe tu consulta o solicitud aquí..." data-en="Describe your inquiry or request here..." placeholder="Describe tu consulta o solicitud aquí..."></textarea>
+                        </div>
+
+                        <div class="form-group checkbox-group">
+                            <input type="checkbox" id="privacy" name="privacy" required>
+                            <label for="privacy" data-es="Acepto la política de privacidad y el tratamiento de mis datos personales *" data-en="I accept the privacy policy and the processing of my personal data *">Acepto la política de privacidad y el tratamiento de mis datos personales *</label>
+                        </div>
+
+                        <button type="submit" class="btn-submit" data-es="Enviar Mensaje" data-en="Send Message">
+                            <i class="fas fa-paper-plane"></i>
+                            <span data-es="Enviar Mensaje" data-en="Send Message">Enviar Mensaje</span>
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Scripts -->
     <script src="js/toggleDarkMode.js"></script>
     <script src="js/translate.js"></script>
     <script src="js/scripts.js"></script>
+    <script src="js/contact.js"></script>
 </body>
 
 </html>
