@@ -2,13 +2,14 @@
 
 ## Funcionalidades Agregadas
 
-### 1. Botón Principal de WhatsApp
-- **Ubicación**: Sección Hero (botón "Solicitar Soporte")
-- **Funcionalidad**: Al hacer clic, abre WhatsApp con un mensaje predefinido
+### 1. Botones de WhatsApp
+- **Botón "Solicitar Soporte"**: Sección Hero
+- **Botón "Solicitar Cotización"**: Sección Servicios
+- **Funcionalidad**: Ambos abren WhatsApp con mensajes predefinidos apropiados
 - **Número**: +506 8642 2654
 - **Mensajes**: 
-  - Español: "Hola! 👋 Necesito solicitar soporte técnico informático. ¿Podrían ayudarme con una consulta?"
-  - Inglés: "Hello! 👋 I need to request IT technical support. Could you help me with an inquiry?"
+  - **Soporte**: "Hola! Necesito solicitar soporte técnico. ¿Podrían ayudarme?"
+  - **Cotización**: "Hola! Me gustaría solicitar una cotización para servicios técnicos. ¿Podrían enviarme información sobre precios y opciones disponibles?"
 
 ### 2. Sistema de Traducción Automática
 - Los mensajes de WhatsApp se adaptan automáticamente al idioma seleccionado
@@ -51,12 +52,20 @@ this.phoneNumber = 'TU_NUMERO_AQUI';
 ### Modificar Mensajes
 Editar en `js/whatsapp.js`:
 ```javascript
-getWhatsAppMessage(language) {
+getWhatsAppMessage(language, type = 'support') {
     const messages = {
-        es: 'Tu mensaje en español',
-        en: 'Your message in English'
+        support: {
+            es: 'Tu mensaje de soporte en español',
+            en: 'Your support message in English'
+        },
+        quote: {
+            es: 'Tu mensaje de cotización en español',
+            en: 'Your quote message in English'
+        }
     };
-    return messages[language] || messages.es;
+    
+    const typeMessages = messages[type] || messages.support;
+    return typeMessages[language] || typeMessages.es;
 }
 ```
 
@@ -64,6 +73,11 @@ getWhatsAppMessage(language) {
 1. Agregar traducciones en `js/translate.js`
 2. Agregar mensajes en `js/whatsapp.js`
 3. Actualizar tooltips en el HTML
+
+### Agregar Nuevos Tipos de Mensajes
+1. Agregar el nuevo tipo en `getWhatsAppMessage()` en `js/whatsapp.js`
+2. Crear el botón correspondiente en el HTML
+3. Configurar el event listener en `setupWhatsAppButtons()`
 
 ## Compatibilidad
 
@@ -76,10 +90,11 @@ getWhatsAppMessage(language) {
 ## Beneficios
 
 1. **Acceso Directo**: Los clientes pueden contactar inmediatamente sin salir del sitio
-2. **Mensajes Predefinidos**: Facilita la comunicación inicial
+2. **Mensajes Especializados**: Diferentes mensajes según el tipo de consulta (soporte vs. cotización)
 3. **Multiidioma**: Soporte para audiencias internacionales
-4. **Experiencia de Usuario**: Proceso de contacto simplificado y visualmente atractivo
+4. **Experiencia de Usuario**: Proceso de contacto simplificado y apropiado para cada necesidad
 5. **Integración Seamless**: Funciona perfectamente con el diseño existente
+6. **Eficiencia**: Reduce el tiempo de comunicación inicial al especificar el tipo de consulta
 
 ## Próximas Mejoras Sugeridas
 
