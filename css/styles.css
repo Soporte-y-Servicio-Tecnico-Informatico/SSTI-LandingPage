@@ -1331,8 +1331,8 @@ main {
     content: none;
 }
 
-/* Sin efecto de línea superior en hover */
-.tienda-card:hover::before { }
+/* Sin efecto de línea superior en hover
+.tienda-card:hover::before { } */
 
 .tienda-card:hover {
     transform: translateY(-8px);
@@ -1482,6 +1482,130 @@ main {
 .contact-section {
     padding: 80px 0;
     background: linear-gradient(135deg, var(--background-color) 0%, var(--surface-color) 100%);
+}
+
+/* ===== FOOTER ===== */
+.footer {
+    background: #41C1BA;
+    border-top: 1px solid var(--border-color);
+    margin-top: 60px;
+}
+
+.footer-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 40px;
+    padding: 60px 20px;
+}
+
+.footer-col h4 {
+    color: white;
+    font-size: 1.1rem;
+    margin-bottom: 16px;
+}
+
+.footer-brand h3 {
+    color: white;
+    margin: 12px 0 8px;
+}
+
+.footer-brand p {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.footer-links,
+.footer-contact {
+    list-style: none;
+    display: grid;
+    gap: 10px;
+}
+
+.footer-links a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+    color: white;
+}
+
+.footer-contact li { color: rgba(255, 255, 255, 0.9); }
+.footer-contact i { color: white; margin-right: 8px; }
+
+.footer-social {
+    display: flex;
+    gap: 12px;
+}
+
+.footer-social a {
+    width: 40px;
+    height: 40px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+}
+
+.footer-social a:hover {
+    background: rgba(255, 255, 255, 0.1);
+    border-color: white;
+    transform: translateY(-2px);
+}
+
+.footer-bottom {
+    border-top: 1px solid var(--border-color);
+    padding: 16px 0;
+}
+
+.footer-bottom-inner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 16px;
+}
+
+.footer-bottom p { color: rgba(255, 255, 255, 0.9); }
+
+.footer-legal {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.footer-legal a {
+    color: rgba(255, 255, 255, 0.9);
+    text-decoration: none;
+}
+
+.footer-legal a:hover { text-decoration: underline; }
+
+.footer-logo-light { display: block; height: 36px; }
+.footer-logo-dark { display: none; height: 36px; }
+[data-theme="dark"] .footer-logo-light { display: none; }
+[data-theme="dark"] .footer-logo-dark { display: block; }
+
+/* Dark mode for footer */
+[data-theme="dark"] .footer { background: #41C1BA; }
+[data-theme="dark"] .footer-social a { border-color: rgba(255, 255, 255, 0.3); }
+[data-theme="dark"] .footer-social a:hover { background: rgba(255, 255, 255, 0.1); }
+
+/* Responsive footer */
+@media (max-width: 1024px) {
+    .footer-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        padding: 40px 20px;
+    }
+}
+
+@media (max-width: 600px) {
+    .footer-container { grid-template-columns: 1fr; }
+    .footer-bottom-inner { flex-direction: column; align-items: flex-start; }
 }
 
 /* Botón WhatsApp destacado */

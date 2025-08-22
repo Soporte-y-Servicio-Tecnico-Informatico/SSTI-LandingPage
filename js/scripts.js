@@ -155,6 +155,10 @@ class SSTIHeader {
 // Inicializar cuando el DOM esté listo
 document.addEventListener('DOMContentLoaded', () => {
     window.sstiHeader = new SSTIHeader();
+    const yearEl = document.getElementById('currentYear');
+    if (yearEl) {
+        yearEl.textContent = new Date().getFullYear();
+    }
 });
 
 // Exportar para uso en otros módulos si es necesario
