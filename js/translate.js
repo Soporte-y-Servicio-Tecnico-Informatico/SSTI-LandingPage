@@ -46,7 +46,8 @@ class LanguageTranslator {
                 'services.cta.primary': 'Solicitar Cotización',
                 'services.cta.secondary': 'Agendar Diagnóstico',
                 'services.group.support.title': 'Soporte técnico (presencial y remoto)',
-                'services.group.webdev.title': 'Desarrollo web y publicidad digital'
+                'services.group.webdev.title': 'Desarrollo web y publicidad digital',
+                'whatsapp.message.support': 'Hola! Necesito solicitar soporte técnico. ¿Podrían ayudarme?'
             },
             en: {
                 'header.company.title1': 'Support & Service',
@@ -87,7 +88,8 @@ class LanguageTranslator {
                 'services.cta.primary': 'Request a Quote',
                 'services.cta.secondary': 'Schedule a Diagnostic',
                 'services.group.support.title': 'Technical support (on-site and remote)',
-                'services.group.webdev.title': 'Web development and digital marketing'
+                'services.group.webdev.title': 'Web development and digital marketing',
+                'whatsapp.message.support': 'Hello! I need to request technical support. Could you help me?'
             }
         };
         this.init();
@@ -140,6 +142,11 @@ class LanguageTranslator {
         
         // Título de la página
         this.updatePageTitle(language);
+
+        // Actualizar mensajes de WhatsApp
+        if (window.whatsappManager) {
+            window.whatsappManager.updateLanguage(language);
+        }
     }
 
     updateLanguageButton(language) {
@@ -181,6 +188,19 @@ class LanguageTranslator {
 
             // Para elementos normales (labels, spans, botones, etc.)
             element.textContent = translation;
+        });
+
+        // Traducir tooltips (title attributes)
+        this.translateTooltips(language);
+    }
+
+    translateTooltips(language) {
+        const elementsWithTooltips = document.querySelectorAll('[data-es-title][data-en-title]');
+        elementsWithTooltips.forEach(element => {
+            const tooltipTranslation = element.getAttribute(`data-${language}-title`);
+            if (tooltipTranslation) {
+                element.setAttribute('title', tooltipTranslation);
+            }
         });
     }
 
