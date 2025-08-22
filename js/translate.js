@@ -162,9 +162,25 @@ class LanguageTranslator {
     translateByDataAttributes(language) {
         this.translatableByData.forEach(element => {
             const translation = element.getAttribute(`data-${language}`);
-            if (translation) {
-                element.textContent = translation;
+            if (!translation) return;
+
+            const tag = element.tagName;
+            // Para inputs y textareas, usar placeholder en lugar de texto interno
+            if (tag === 'INPUT' || tag === 'TEXTAREA') {
+                element.setAttribute('placeholder', translation);
+                // No escribir texto dentro del control; limpiar value si es textarea con texto inyectado
+                if (tag === 'TEXTAREA' && element.value === element.textContent) {
+                    element.value = '';
+                }
+                // Asegurar que no haya texto interno en textarea por traducción previa
+                if (tag === 'TEXTAREA' && element.firstChild && element.firstChild.nodeType === Node.TEXT_NODE) {
+                    element.textContent = '';
+                }
+                return;
             }
+
+            // Para elementos normales (labels, spans, botones, etc.)
+            element.textContent = translation;
         });
     }
 
