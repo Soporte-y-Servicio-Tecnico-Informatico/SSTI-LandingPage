@@ -3,13 +3,20 @@
 ## Funcionalidades Agregadas
 
 ### 1. Botones de WhatsApp
-- **Botón "Solicitar Soporte"**: Sección Hero
-- **Botón "Solicitar Cotización"**: Sección Servicios
-- **Funcionalidad**: Ambos abren WhatsApp con mensajes predefinidos apropiados
+- **Página Principal**:
+  - Botón "Solicitar Soporte" (Sección Hero)
+  - Botón "Solicitar Cotización" (Sección Servicios)
+- **Página de Servicios** (`store/services/services.html`):
+  - Botones de servicios técnicos (Asesoría, Mantenimiento, Cambio de Hardware, etc.)
+- **Página de Productos** (`store/store/store.html`):
+  - Botones "Comprar Ahora" para productos tecnológicos
+- **Funcionalidad**: Todos abren WhatsApp con mensajes predefinidos apropiados
 - **Número**: +506 8642 2654
-- **Mensajes**: 
+- **Mensajes Especializados**: 
   - **Soporte**: "Hola! Necesito solicitar soporte técnico. ¿Podrían ayudarme?"
   - **Cotización**: "Hola! Me gustaría solicitar una cotización para servicios técnicos. ¿Podrían enviarme información sobre precios y opciones disponibles?"
+  - **Servicios Específicos**: Mensajes personalizados para cada tipo de servicio
+  - **Productos**: Mensajes para consultas de compra
 
 ### 2. Sistema de Traducción Automática
 - Los mensajes de WhatsApp se adaptan automáticamente al idioma seleccionado
@@ -26,13 +33,15 @@
 
 ### HTML
 - `index.html`: Botón principal convertido a WhatsApp con tooltips traducibles
+- `store/services/services.html`: Botones de servicios con funcionalidad WhatsApp
+- `store/store/store.html`: Botones de productos con funcionalidad WhatsApp
 
 ### JavaScript
-- `js/whatsapp.js`: Nuevo sistema de gestión de WhatsApp
+- `js/whatsapp.js`: Sistema extendido de gestión de WhatsApp para múltiples páginas
 - `js/translate.js`: Integración con el sistema de traducciones
 
 ### CSS
-- `css/styles.css`: Estilos específicos para el botón de WhatsApp
+- Sin cambios - se mantiene el diseño original de todos los botones
 
 ## Cómo Funciona
 
@@ -61,6 +70,20 @@ getWhatsAppMessage(language, type = 'support') {
         quote: {
             es: 'Tu mensaje de cotización en español',
             en: 'Your quote message in English'
+        },
+        // Servicios específicos
+        consulting: {
+            es: 'Tu mensaje de asesoría en español',
+            en: 'Your consulting message in English'
+        },
+        maintenance: {
+            es: 'Tu mensaje de mantenimiento en español',
+            en: 'Your maintenance message in English'
+        },
+        // Y así para cada tipo de servicio...
+        purchase: {
+            es: 'Tu mensaje de compra en español',
+            en: 'Your purchase message in English'
         }
     };
     
@@ -90,11 +113,13 @@ getWhatsAppMessage(language, type = 'support') {
 ## Beneficios
 
 1. **Acceso Directo**: Los clientes pueden contactar inmediatamente sin salir del sitio
-2. **Mensajes Especializados**: Diferentes mensajes según el tipo de consulta (soporte vs. cotización)
+2. **Mensajes Ultra-Especializados**: Mensajes específicos para cada tipo de servicio y producto
 3. **Multiidioma**: Soporte para audiencias internacionales
 4. **Experiencia de Usuario**: Proceso de contacto simplificado y apropiado para cada necesidad
-5. **Integración Seamless**: Funciona perfectamente con el diseño existente
-6. **Eficiencia**: Reduce el tiempo de comunicación inicial al especificar el tipo de consulta
+5. **Integración Seamless**: Funciona perfectamente con el diseño existente en todas las páginas
+6. **Eficiencia**: Reduce el tiempo de comunicación inicial al especificar exactamente qué se necesita
+7. **Cobertura Completa**: Funcionalidad WhatsApp en todas las páginas del sitio (principal, servicios y productos)
+8. **Sin Cambios Visuales**: Todos los botones mantienen su diseño original
 
 ## Próximas Mejoras Sugeridas
 
